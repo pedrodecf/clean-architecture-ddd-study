@@ -1,0 +1,25 @@
+{
+  "name": "clean-architecture-study",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest run",
+    "lint": "eslint --ext .ts src --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rocketseat/eslint-config": "^2.2.2",
+    "@types/node": "^20.12.5",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.4",
+    "vite-tsconfig-paths": "^4.3.2",
+    "vitest": "^1.4.0"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.10"
+  }
+}
