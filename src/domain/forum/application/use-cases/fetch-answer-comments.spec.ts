@@ -31,12 +31,12 @@ describe('fetch answer comments', () => {
       }),
     )
 
-    const { answerComments } = await sut.execute({
+    const result = await sut.execute({
       answerId: '1',
       page: 1,
     })
 
-    expect(answerComments).toHaveLength(3)
+    expect(result.value?.answerComments).toHaveLength(3)
   })
 
   it('should be able to fetch paganated answer comments', async () => {
@@ -48,11 +48,11 @@ describe('fetch answer comments', () => {
       )
     }
 
-    const { answerComments } = await sut.execute({
+    const result = await sut.execute({
       page: 2,
       answerId: '1',
     })
 
-    expect(answerComments).toHaveLength(2)
+    expect(result.value?.answerComments).toHaveLength(2)
   })
 }) //
