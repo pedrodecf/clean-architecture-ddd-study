@@ -1,3 +1,4 @@
+import { Either, right } from '@/core/either'
 import { AnswerComment } from '../../enterprise/entities/answer-comments'
 import { AnswerCommentRepository } from '../repositories/answer-comments-repository'
 
@@ -6,9 +7,10 @@ interface FetchAnswerCommentsAnswersUseCaseRequest {
   answerId: string
 }
 
-interface FetchAnswerCommentsAnswersUseCaseResponse {
-  answerComments: AnswerComment[]
-}
+type FetchAnswerCommentsAnswersUseCaseResponse = Either<
+  null,
+  { answerComments: AnswerComment[] }
+>
 
 export class FetchAnswerCommentsAnswersUseCase {
   constructor(private answerCommentRepository: AnswerCommentRepository) {}
@@ -22,8 +24,6 @@ export class FetchAnswerCommentsAnswersUseCase {
         page,
       })
 
-    return {
-      answerComments,
-    }
+    return right({ answerComments })
   }
 }
